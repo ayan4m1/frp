@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: ./dockerfiles/Dockerfile-for-frps
+    ports:
+      - "7000:7000"
+      - "7001:7001"
+      - "8085:8085"
+    volumes:
+      - type: bind
+        source: ./scripts
+        target: /etc/frp
